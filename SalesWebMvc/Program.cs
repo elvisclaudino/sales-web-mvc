@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SalesWebMvc.Data;
 using SalesWebMvc.Models;
 using SalesWebMvc.Models.Enums;
+using SalesWebMvc.Services;
 using System;
 using System.Linq;
 
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
 // Adiciona serviços ao contêiner.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
+builder.Services.AddScoped<SellerService>();
 
 var app = builder.Build();
 

@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using SalesWebMvc.Data;
-using SalesWebMvc.Models;
-using SalesWebMvc.Models.Enums;
 using SalesWebMvc.Services;
-using System;
-using System.Linq;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
@@ -16,6 +11,7 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<SeedingService>();
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 var app = builder.Build();
 
